@@ -1,0 +1,3 @@
+= Luminesce How-To Guides
+
+How to solve common problems with Luminesce

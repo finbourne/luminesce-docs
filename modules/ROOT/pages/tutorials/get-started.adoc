@@ -1,0 +1,34 @@
+= Getting Started with Luminesce
+
+In this guide we will learn how to get up and running with Luminesce.
+
+(I'm guessing what the steps would be)
+
+== Create LUSID Account
+
+You'll first need to create and login to your LUSID account.
+For more details on how to do this, see:
+
+* xref:lusid::how-to/get-started/create-account.adoc[]
+* xref:lusid::how-to/get-started/login-account.adoc[].
+
+Once you've done that you're ready to start using Luminesce.
+
+== Enable Luminesce
+
+Something something, set this config to enable it.
+
+== Luminesce Web API
+
+Navigate to Luminesce Web API at https://<your-domain>.lusid.com/app/data-virtualisation/query-editor
+You should see the following screen:
+
+image::lusid-editor.png[width=400]
+
+Now you can write a query against LUSID's default data.
+
+[source, sql]
+----
+SELECT *
+FROM Lusid.Instrument
+----

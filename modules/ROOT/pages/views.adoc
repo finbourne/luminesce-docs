@@ -1,0 +1,12 @@
+= Views
+
+Luminesce views are very similar to SQL-Providers.
+
+Those providers (created vis Sql.Db) allow for writing SQl that runs directly against SQL Databases, while inserting MACROS to allow for efficient filter / join handling and PARAMETER handling.
+
+Luminesce views are created by using Sys.Admin.SetupView this has a similar but reduced set of options and supports the same MACRO syntax.
+
+Both of those Direct Providers may spin up and maintain Providers (but they are not required to do so).
+
+These views simply run against the same instance of Luminesce.
+

@@ -1,0 +1,21 @@
+= Luminesce
+
+Luminesce is a Data Virtualisation System within the Finbourne suite of products.
+
+== Why Data Virtualisation?
+
+Not all data is nicely sitting in one repository. Or even in one kind of repository (SQL, Hadoop, Elasticsearch, APIs - like JIRA or LUSID! The list is endless). 
+Needing to use hundreds of systems to get at that is a nightmare for end users, developers, BAs, everyone.
+
+Yet so much of that data is related in some way (And even if it isn't you still want one access path to rule them all).
+
+Some organizations then build massive data copies. Let's call them Data Lakes. 
+Oh my, that's so 2015. 
+(Seriously, copying your data, maintaining those copies, processes to collate it all into one place, paying for it... all that before you can use any of it. Not cool.)
+
+Enter Luminesce.
+
+== Next Steps
+
+* If you want to learn more about how Luminesce works, see xref:explanation/index.adoc[].
+* If you want to give Luminesce a try, see xref:tutorials/get-started.adoc[].

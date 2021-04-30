@@ -1,0 +1,15 @@
+= Query Language
+
+LuminesceSql is very closely derived from SQLite's SQL syntax.
+
+In general most all of the SELECT symantics of SQLite are supported while none of the DDL or other commands are (with a few exceptions).
+
+SELECT syntax differences:
+
+* Common Table Expressions (CTEs) are not supported - But a simple reusable variable syntax is instead (usable for table variables and scalar variables)
+* TYPES keyword can proceed SELECT statements in order to force certain column types in cases when those types are not derived from a provider with certainty.
+
+Expression syntax differences:
+
+* Date and DateTime constants should be written as #yyyy-MM-dd HH:mm:ss# so surrounded by # not '.
+* use [with] ... enduse : support for Direct Providers' arbitrary syntax.

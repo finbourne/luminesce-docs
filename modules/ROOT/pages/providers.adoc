@@ -1,0 +1,40 @@
+= Providers
+
+Providers is the blanket term for any service sitting on the Luminesce Grid that provides data.
+
+These can be for one single client domain (all that is allowable for customers to build/host), a certain set of domains or all domains (as most all Finbourne hosted ones are). 
+Access to any provider is controlled by Shrine via the familiar GUI on the Lusid website. 
+
+They may be hosted either in Finbourne's Kubernetes cluster, that of a customer, any cluster server infrastructure or even run locally on a person's machine and thus only available to them.
+
+== Data Providers
+
+Generally speaking a provider is just some dotnet core code derived from a base class provided in the Luminesce API.
+It exposes its metadata (e.g. its name, names and types of columns, input parameters and their types, etc.)
+
+It implements one key method, GetData, which is passed a context allowing it to perform data fetch operations against an underlying data source efficiently and securely.
+For example it is passed the Expression Tree of the portion of the user's WHERE clause that applies uniquely to that provider, join data to limit the result set, a row count limit all of which are for optimization.
+User authentication information (allowing for performing the likes of row-level security checks via Shrine or using the user's OAUTH2 token to connect to an underlying resource).
+This method then fills the result table (which it is also provided in the context).
+
+== Provider Factories
+
+These are classes that dynamically create providers on the grid.
+The most notable examples at the moment are:
+
+* `ViewProviderFactory` that converts saved view definition into instances of `ViewProvider`.
+* `DatabaseProviderFactory` that converts saved SQL query definitions (with embedded macros) into calls to database(s) into instances of `DatabaseProvider`.
+* `InstrumentProviderFactory` that creates one general `Lusid.Instrument` provider (for all customer-tenants) but lets each tenant define its own (to override the general one) which "inlines" a series of properties into columns.
+
+Other examples that could be created:
+
+* A tree of Excel / CSV / etc. files and spin up one strongly typed provider for each file.
+* Other entity types besides `Instrument` to support property inlining.
+
+== Direct Providers
+
+Direct providers don't expose "shaped" data, but rather take input variables (scalar values and/or tables of data) and return a different table of data.
+They allow for their own entirely bespoke syntax.
+
+Some such as the Excel and CSV direct providers use this for parameters / arguments to be specified.
+While others could be another language entirely (Python and R being prime candidates due to their data manipulation libraries) or grammar of some other form (like Mustache templates.)

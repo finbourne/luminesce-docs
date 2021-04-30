@@ -1,0 +1,19 @@
+= How to query LUSID
+
+
+We have a bunch of our financial data loaded into LUSID, how do we query that? 
+Let's learn how...
+
+The LUSID website has a user interface for running Luminesce queries, seeing your execution history, graphing the results, etc.
+
+This is an area of active development and the functionality is continually improving and increasing. Under the hood this uses the Web API.
+
+
+* Query Editor - https://fbn-ci.lusid.com/app/data-virtualisation/query-editor
+
+What tables does LUSID expose?
+How can we get a list of these tables?
+
+Show a simple example of querying some data
+
+== Importing data into LUSID

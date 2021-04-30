@@ -1,0 +1,4 @@
+= How to connect to Tableau
+
+How to connect to BI Tools like Tableau using ODBC/JDBC.
+

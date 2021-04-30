@@ -1,0 +1,5 @@
+= Architecture
+
+Luminesce is a message bus backed set of core services and data providers that form a distributed, scalable grid capable of breaking down sql-queries into their requisite parts, invoking providers efficiently to fetch those parts' data and stitching the results back together.
+
+Put a diagram here
